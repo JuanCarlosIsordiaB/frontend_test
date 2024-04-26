@@ -1,15 +1,17 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 
 interface FormValues {
   email: string;
 }
+// In this part I did not use React-Hook-Form to be able to demonstrate the use of React, I used states that use functions to be able to validate the email
 
 export const ForgotPasswordForm = () => {
-  const [formData, setFormData] = useState<FormValues>({ email: "" });
-  const [errors, setErrors] = useState<{ email: string }>({ email: "" });
+  const [formData, setFormData] = useState<FormValues>({ email: "" }); // Form data
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const [errors, setErrors] = useState<{ email: string }>({ email: "" }); // Form errors
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => { // Handle form input change
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
 
@@ -36,8 +38,8 @@ export const ForgotPasswordForm = () => {
 
   const validateEmail = (email: string) => {
     const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    const isValid = regex.test(email);
-    setErrors({ email: isValid ? "" : "Invalid email format" });
+    const isValid = regex.test(email); // Check if email is valid
+    setErrors({ email: isValid ? "" : "Invalid email format" }); // Set error message
     return isValid;
   };
 
@@ -48,7 +50,9 @@ export const ForgotPasswordForm = () => {
         onSubmit={handleSubmit}
         noValidate
       >
-        <p className="text-md mt-5 text-center mb-10 font-bold">Change Password</p>
+        <p className="text-md mt-5 text-center mb-10 font-bold">
+          Change Password
+        </p>
 
         <div className="mb-5">
           <label htmlFor="email" className="text-sm">
