@@ -57,7 +57,7 @@ export const Form = () => {
             className={`w-full p-3 border rounded-md ${
               errors.password ? "border-red-500" : "border-gray-100"
             }`}
-            type="password" // Cambiado de type="text" a type="password"
+            type="password" 
             placeholder="Enter your password"
             {...register("password", {
               required: "This field is required",
