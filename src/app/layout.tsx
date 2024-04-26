@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        // 
+        
         <div className="min-h-screen flex flex-col-reverse md:flex-row"> 
           <aside className="bg-emerald-300 h-20 md:h-screen md:w-1/3  md:sticky md:top-0 md:left-0 flex flex-col justify-center items-center  order-last md:order-first">
             
